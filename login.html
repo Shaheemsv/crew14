@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-card">
+      <h1 class="logo">AI MCQ Platform</h1>
+      <h2>Login</h2>
+      <form action="#" onsubmit="handleLogin(event)">
+        <div class="form-group">
+          <label for="username">Email/Username</label>
+          <input type="text" id="username" name="username" placeholder="Enter your username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+        <div class="form-group">
+          <label for="role">Select Role</label>
+          <select id="role" name="role">
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+          </select>
+        </div>
+        <button type="submit" class="btn">Login</button>
+        <div class="links">
+          <a href="#">Forgot Password?</a>
+          <a href="signup.html">Sign Up</a>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script>
+    function handleLogin(event) {
+      event.preventDefault(); // Prevent form submission
+      const role = document.getElementById('role').value;
+      if (role === 'admin') {
+        window.location.href = 'admin-dashboard.html';
+      } else if (role === 'user') {
+        window.location.href = 'exam-page.html';
+      }
+    }
+  </script>
+</body>
+</html>
